@@ -1,9 +1,0 @@
-{
-  "triggers": [
-    {
-      "name": "syncGoodsTimer",
-      "type": "timer",
-      "config": "0 0 * * * * *"
-    }
-  ]
-}

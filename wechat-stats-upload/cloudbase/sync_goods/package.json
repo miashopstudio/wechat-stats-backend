@@ -1,9 +1,0 @@
-{
-  "name": "sync_goods",
-  "version": "1.0.0",
-  "description": "将微信云开发商品（含分类）同步到统计后台",
-  "main": "index.js",
-  "dependencies": {
-    "wx-server-sdk": "~2.6.3"
-  }
-}
