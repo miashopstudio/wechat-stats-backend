@@ -1,0 +1,20 @@
+# 本地 / 云服务器一键起 MySQL（后端用 MYSQL_HOST=mysql 连接）
+# 用法：docker compose up -d
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: wechat_stats_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: wechat_stats
+      TCSQL_MODE: ""
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+
+volumes:
+  mysql_data:
